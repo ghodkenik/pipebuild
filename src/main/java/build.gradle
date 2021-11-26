@@ -1,0 +1,15 @@
+logger.info "this is gradle project"
+
+apply plugin 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    testImplementation "junit:junit:4.12"
+}
+
+jar {
+    archiveBaseName = 'first-gradle'
+    archiveVersion =  '0.0.1'
+}P
