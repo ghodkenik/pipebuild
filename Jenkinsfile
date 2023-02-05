@@ -1,6 +1,8 @@
-pipeline() {
+pipeline {
 	agent any
-	stage('build') {
-		echo "Pipeline code"
-	}
+	stages {
+		stage('Build') {
+			echo "Pipeline code"
+		}
+	}	
 }
