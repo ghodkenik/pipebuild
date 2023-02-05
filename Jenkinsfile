@@ -3,9 +3,8 @@ pipeline {
 	stages {
 		stage('Build'){
             		steps {
-						echo 'gradlew build...'
+						echo 'gradle build...'
                 		sh 'gradle clean build'
-						
             		}
         	}
 	}	
