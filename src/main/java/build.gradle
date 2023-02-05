@@ -12,4 +12,4 @@ dependencies {
 jar {
     archiveBaseName = 'first-gradle'
     archiveVersion =  '0.0.1'
-}P
+}
