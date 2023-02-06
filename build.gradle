@@ -1,5 +1,9 @@
 logger.info "this is gradle project"
 
+plugins {
+    id 'java-gradle-plugin'
+}
+
 apply plugin 'java'
 
 sourceCompatibility = 1.8
