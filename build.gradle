@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+repositories { 
+
+}
+
+dependencies {
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Test'
+    }
+    archiveName 'test-gradle.jar'
+    baseName 'test-gradle'
+    version 1.0
+}
