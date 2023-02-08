@@ -2,26 +2,15 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "java",
-			"mainClass": "Test",
-			"targetPath": "${workspaceFolder}/${workspaceFolderBasename}.jar",
-			"elements": [
-				"${compileOutput}",
-				"${dependencies}"
+			"type": "java (build)",
+			"paths": [
+				"${workspace}"
 			],
+			"isFullBuild": true,
+			"group": "build",
 			"problemMatcher": [],
-			"label": "java: exportjar:my-groovy_jenk_pipeline",
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
-		},
-		{
-			"label": "gradle",
-			"command" : "gradle",
-			"isShellCommand" : true,
-			"args": [""],
-			"showOutput" : "always"
+			"label": "java (build): Build Workspace",
+			"detail": "$(tools) Build all the Java projects in workspace."
 		}
 	]
 }
