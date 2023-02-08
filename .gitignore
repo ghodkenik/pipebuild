@@ -1,3 +1,4 @@
 .tkk
 *.jar
 .gradle/*
+bin/*
