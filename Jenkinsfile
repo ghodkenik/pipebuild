@@ -9,6 +9,7 @@ pipeline {
             steps {
 				echo 'gradle build...'
                 sh 'gradle clean build'
+				agent any
 				sh 'docker build . -t pipebuild:2.0'
             }
         }
