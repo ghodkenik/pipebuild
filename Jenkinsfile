@@ -13,7 +13,9 @@ pipeline {
         }
 		agent any
 		stage('Docker build') {
-			sh 'docker build . -t pipebuild:2.0'
+			steps {
+				sh 'docker build . -t pipebuild:2.0'
+			}
 		}
 	}	
 }
