@@ -8,7 +8,9 @@ pipeline {
             }
         }
 		stage ('Docker build') {
-			def springImage = docker.build("pipebuild:1.0")
+			steps {
+				def springImage = docker.build("pipebuild:1.0")
+			}
 		}
 	}	
 }
