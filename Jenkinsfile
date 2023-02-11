@@ -7,9 +7,9 @@ pipeline {
 	stages {
 		stage('Build'){
             steps {
-
 				echo 'gradle build...'
                 sh 'gradle clean build'
+				sh 'docker build . -t pipebuild:2.0'
             }
         }
 	}	
