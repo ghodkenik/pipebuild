@@ -1,6 +1,6 @@
 pipeline {
 	agent { 
-		docker.withTool('Docker') {
+		docker {
 			image 'gradle:7.6.0-jdk-alpine'
 		}
 	}
