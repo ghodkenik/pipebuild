@@ -1,0 +1,7 @@
+services:
+  springtst:
+    image: pipebuild:1.0
+    ports:
+      - 9090:9090
+    volumes:
+      - /Users/ghodkenikhil/Documents/Learnings-Notes-etc/All-Code/my-groovy_jenk_pipeline/pipebuild/build/libs:/apps:ro
