@@ -21,8 +21,9 @@ jar {
         attributes 'Main-Class': 'Application'
     }
     baseName 'test-gradle'
+    classifier 'spring'
     //version 1.0
-    def versionno = providers.environmentVariable('BUILD_NUMBER').get()?:1.0
+    def versionno = providers.environmentVariable('BUILD_NUMBER').get()
     println 'env var for build 123 .. '+versionno
     version versionno
 }
