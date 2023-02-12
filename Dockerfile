@@ -1,6 +1,7 @@
 FROM openjdk:12
 
 ENV jarver $BUILD_NUMBER
+RUN echo "print vars $jarver $BUILD_NUMBER"
 WORKDIR /apps
 #VOLUME [ "./build/libs/:/apps" ]
 COPY ./build/libs/test-gradle-${jarver}-spring.jar /apps/test-gradle-${jarver}-spring.jar
