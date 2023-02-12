@@ -27,6 +27,11 @@ pipeline {
 				sh 'docker push ghodkenikhil/pipebuild:latest'
 			}
 		}
+		stage('k8s deployment') {
+			steps {
+				sh 'kubectl apply -f k8s/deployment-config.yml'
+			}
+		}
 	}
 	post {
 		always {
