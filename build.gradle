@@ -20,9 +20,9 @@ jar {
     manifest {
         attributes 'Main-Class': 'Application'
     }
-    archiveName 'test-gradle.jar'
     baseName 'test-gradle'
-    def versionno = providers.environmentVariable('BUILD_NUMBER').get()
+    //version 1.0
+    def versionno = providers.environmentVariable('BUILD_NUMBER').get()?:1.0
     println 'env var for build 123 .. '+versionno
     version '+versionno'
 }
