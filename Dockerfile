@@ -1,6 +1,7 @@
 FROM openjdk:12
 
-ARG jarver $BUILD_NUMBER
+ARG BUILD_NUMBER
+ENV jarver=$BUILD_NUMBER
 RUN echo "print vars $jarver $BUILD_NUMBER"
 WORKDIR /apps
 #VOLUME [ "./build/libs/:/apps" ]
