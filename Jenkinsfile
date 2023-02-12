@@ -9,7 +9,7 @@ pipeline {
         }
 		stage('Docker build') {
 			steps {
-				sh 'docker build . -t pipebuild:${BUILD_NUMBER} --build-arg BUILD_NO=$BUILD_NUMBER'
+				sh 'docker build . -t pipebuild:${BUILD_NUMBER} --build-arg BUILD_NUMBER=$BUILD_NUMBER'
 			}
 		}
 	}	
