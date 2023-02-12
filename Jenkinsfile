@@ -22,7 +22,9 @@ pipeline {
 			}
 		}
 		stage('docker push') {
-			sh 'docker push ghodkenikhil/pipebuild:latest'
+			steps {
+				sh 'docker push ghodkenikhil/pipebuild:latest'
+			}
 		}
 	}
 	post {
