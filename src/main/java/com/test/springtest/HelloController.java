@@ -10,5 +10,4 @@ public class HelloController {
 	public String index() {
 		return "Greetings from Spring Boot! ... yay 1010 from jenkins build !";
 	}
-
 }
