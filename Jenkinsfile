@@ -14,16 +14,20 @@ pipeline {
 		stage('Docker build') {
 			steps {
 				sh 'docker build . -t pipebuild:${BUILD_NUMBER} --build-arg BUILD_NUMBER=${BUILD_NUMBER}'
-				sh 'docker push'
 			}
 		}
 		stage('docker login') {
 			steps{
-				sh 'docker login -u '
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 			}
 		}
 		stage('docker push') {
-
+			sh 'docker push ghodkenikhil/pipebuild:latest'
 		}
-	}	
+	}
+	post {
+		always {
+			sh 'docker logout'
+		}
+	}
 }
