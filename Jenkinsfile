@@ -4,7 +4,7 @@ pipeline {
 		stage('Build'){
             steps {
 				echo 'gradle build...'
-                sh 'gradle clean build'
+                sh 'gradle clean build -Pbuildno=$BUILD_NUMBER'
             }
         }
 		stage('Docker build') {

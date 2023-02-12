@@ -22,5 +22,6 @@ jar {
     }
     archiveName 'test-gradle.jar'
     baseName 'test-gradle'
-    version '$BUILD_NUMBER'
+    def versionno = $BUILD_NUMBER
+    version $versionno
 }
