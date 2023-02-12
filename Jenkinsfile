@@ -1,9 +1,4 @@
 pipeline {
-	agent { 
-		docker {
-			image 'gradle:7.6.0-jdk-alpine'
-		}
-	}
 	stages {
 		stage('Build'){
             steps {
@@ -11,10 +6,9 @@ pipeline {
                 sh 'gradle clean build'
             }
         }
-		agent any
 		stage('Docker build') {
 			steps {
-				sh 'docker build . -t pipebuild:2.0'
+				sh 'docker build . -t pipebuild:${env.BUILD_NUMBER}'
 			}
 		}
 	}	
