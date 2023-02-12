@@ -23,7 +23,7 @@ pipeline {
 		}
 		stage('docker push') {
 			steps {
-				sh 'docker push ghodkenikhil/pipebuild:latest'
+				sh 'docker push pipebuild:latest'
 			}
 		}
 	}
