@@ -23,7 +23,8 @@ pipeline {
 		}
 		stage('docker push') {
 			steps {
-				sh 'docker push pipebuild:${BUILD_NUMBER} ghodkenikhil/pipebuild:latest'
+				sh 'docker image tag pipebuild:${BUILD_NUMBER} ghodkenikhil/pipebuild:latest'
+				sh 'docker push ghodkenikhil/pipebuild:latest'
 			}
 		}
 	}
