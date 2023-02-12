@@ -22,6 +22,6 @@ jar {
     }
     archiveName 'test-gradle.jar'
     baseName 'test-gradle'
-    def versionno = $BUILD_NUMBER
+    def versionno = providers.environmentVariable('BUILD_NUMBER').get()
     version $versionno
 }
