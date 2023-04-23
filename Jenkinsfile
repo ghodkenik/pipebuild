@@ -8,7 +8,10 @@ pipeline {
             steps {
 				echo 'gradle build...'
 				echo "docker hub creds $DOCKERHUB_CREDENTIALS"
-                sh 'gradle clean build -Pbuildno=$BUILD_NUMBER'
+                //sh 'gradle clean build -Pbuildno=$BUILD_NUMBER'
+				withGradle {
+					gradle clean build -Pbuildno=$BUILD_NUMBER
+				}
             }
         }
 		stage('Docker build') {

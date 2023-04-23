@@ -6,7 +6,6 @@ plugins {
 java {
     sourceCompatibility '12'
     targetCompatibility '12'
-
 }
 apply plugin: 'java'
 apply plugin: 'io.spring.dependency-management'
@@ -27,8 +26,9 @@ bootJar {
     }
     baseName 'test-gradle'
     classifier 'spring'
-    //version 1.0
-    def versionno = providers.environmentVariable('BUILD_NUMBER').get()
+    version 1.0
+    def versionno = ""
+    versionno = System.getenv('BUILD_NUMBER')
     println 'env var for build 123 .. '+versionno
     version versionno
 }
