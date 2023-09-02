@@ -25,8 +25,8 @@ pipeline {
 		}
 		stage('docker push') {
 			steps {
-				sh 'docker image tag pipebuild:${BUILD_NUMBER} ghodkenikhil/pipebuild:latest'
-				sh 'docker push ghodkenikhil/pipebuild:latest'
+				sh 'docker image tag pipebuild:${BUILD_NUMBER} ghodkenikhil/pipebuild:1.1'
+				sh 'docker push ghodkenikhil/pipebuild:1.1'
 			}
 		}
 		stage('helm deployment') {
