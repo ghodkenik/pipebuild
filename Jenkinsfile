@@ -31,17 +31,15 @@ pipeline {
 		}
 		stage('helm deployment') {
 			steps {
-				stage('List pods') {
-    				withKubeConfig([credentialsId: 'jenkins',
-                    caCertificate: "",
-                    serverUrl: 'https://172.16.152.10:6443',
-                    contextName: 'kubernetes-admin@kubernetes',
-                    clusterName: 'kubernetes',
-                    namespace: 'default'
-                    ]) {
-      					sh 'helm install 3tiernginx k8s/helm/nginx/'
-    				}
-				}
+    			withKubeConfig([credentialsId: 'jenkins',
+                caCertificate: "",
+                serverUrl: 'https://172.16.152.10:6443',
+                contextName: 'kubernetes-admin@kubernetes',
+                clusterName: 'kubernetes',
+                namespace: 'default'
+                ]) {
+      				sh 'helm install 3tiernginx k8s/helm/nginx/'
+    			}
 			}
 		}
 		post {
