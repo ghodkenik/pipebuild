@@ -29,15 +29,25 @@ pipeline {
 				sh 'docker push ghodkenikhil/pipebuild:latest'
 			}
 		}
-		stage('k8s deployment') {
+		stage('helm deployment') {
 			steps {
-				sh 'kubectl apply -f k8s/k8s-configs.yml'
+				stage('List pods') {
+    				withKubeConfig([credentialsId: 'jenkins',
+                    caCertificate: "",
+                    serverUrl: 'https://172.16.152.10:6443',
+                    contextName: 'kubernetes-admin@kubernetes',
+                    clusterName: 'kubernetes',
+                    namespace: 'default'
+                    ]) {
+      					sh 'helm install 3tiernginx k8s/helm/nginx/'
+    				}
+				}
 			}
 		}
-	}
-	post {
-		always {
-			sh 'docker logout'
+		post {
+			always {
+				sh 'docker logout'
+			}
 		}
 	}
 }
