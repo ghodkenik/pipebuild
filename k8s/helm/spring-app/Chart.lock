@@ -1,0 +1,6 @@
+dependencies:
+- name: springmongodb
+  repository: file://../mongo
+  version: "1.1"
+digest: sha256:ffe1c0300ade88bd5ed598c3f99f283e68630ded918a10b8b7623271ed8fa83a
+generated: "2023-09-02T17:36:17.057512+05:30"

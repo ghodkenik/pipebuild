@@ -1,7 +1,15 @@
 services:
   springtst:
-    image: pipebuild:1.0
+    image: pipebuild:1.1
     ports:
       - 9090:9090
-    volumes:
-      - /Users/ghodkenikhil/Documents/Learnings-Notes-etc/All-Code/my-groovy_jenk_pipeline/pipebuild/build/libs:/apps:ro
+    #volumes:
+    #  - /Users/ghodkenikhil/Documents/Learnings-Notes-etc/All-Code/my-groovy_jenk_pipeline/pipebuild/build/libs:/apps:ro
+  nginx-cus:
+    image: nginx-custom:1.1
+    ports:
+      - 80:80
+  springmongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017

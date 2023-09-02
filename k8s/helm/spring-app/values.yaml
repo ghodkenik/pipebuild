@@ -1,0 +1,16 @@
+# Default values.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+name: spring-depl
+maxReplicas: 2
+image:
+  name: springapp
+  tag: ''
+  pullPolicy: Always
+service:
+  name: springtst
+  type: NodePort
+  port: 9090
+  targetPort: 9090
+  portName: springtst

@@ -1,0 +1,10 @@
+apiVersion: v2
+description: springtest service
+name: springtest
+version: "1.1"
+appVersion: "1.0"
+dependencies:
+  - name: springmongodb
+    alias: mongo-chart
+    version: 1.1
+    repository: file://../mongo

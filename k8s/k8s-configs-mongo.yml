@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springapp
+  name: mongodbtest-deployment
 spec:
   selector:
     matchLabels:
-      app: springapp
+      app: mongodbtest
   template:
     metadata:
       labels:
-        app: springapp
+        app: mongodbtest
     spec:
       containers:
-      - name: springapp
-        image: ghodkenikhil/pipebuild:latest
+      - name: mongodbtest
+        image: mongo:latest
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - containerPort: 9090
+        - containerPort: 27017
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name:  firstapp
+  name:  springmongodb
 spec:
   selector:
-    app:  springapp
+    app:  mongodbtest
   type:  NodePort
   ports:
-  - name:  spring-test
-    port:  1180
-    targetPort:  9090
+  - name:  mongodb
+    port:  27017
+    targetPort:  27017

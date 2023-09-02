@@ -1,0 +1,15 @@
+replicaCount: 1
+name: mongo-depl
+maxReplicas: 2
+
+image:
+  name: mongodb
+  tag: ''
+  pullPolicy: Always
+
+service:
+  name: springmongodb
+  type: NodePort
+  port: 27017
+  targetPort: 27017
+  portName: spring-mongo-db

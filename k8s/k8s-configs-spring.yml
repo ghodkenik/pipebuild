@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springapp-deployment
+spec:
+  selector:
+    matchLabels:
+      app: springapp
+  template:
+    metadata:
+      labels:
+        app: springapp
+    spec:
+      containers:
+      - name: springapp
+        image: ghodkenikhil/pipebuild:1.1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 9090
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  springtst
+spec:
+  selector:
+    app:  springapp
+  type:  NodePort
+  ports:
+  - name:  spring-test
+    port:  9090
+    targetPort:  9090

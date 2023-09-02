@@ -1,0 +1,17 @@
+# Default values.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+name: nginx-depl
+maxReplicas: 2
+image:
+  name: nginx-custom
+  tag: ''
+  pullPolicy: Always
+service:
+  name: nginx-cus-svc
+  type: NodePort
+  port: 80
+  targetPort: 80
+  portName: nginx-custom
