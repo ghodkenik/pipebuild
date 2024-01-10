@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CyclicRotation",
+            "request": "launch",
+            "mainClass": "com.test.springtest.controller.CyclicRotation",
+            "projectName": "pipebuild"
+        },
+        {
+            "type": "java",
+            "name": "MergeIntervals",
+            "request": "launch",
+            "mainClass": "com.test.springtest.controller.MergeIntervals",
+            "projectName": "pipebuild"
+        },
+        {
+            "type": "java",
+            "name": "MiscTest",
+            "request": "launch",
+            "mainClass": "com.test.MiscTest",
+            "projectName": "pipebuild"
+        },
+        {
+            "type": "java",
             "name": "Application",
             "request": "launch",
             "mainClass": "com.test.springtest.Application",
