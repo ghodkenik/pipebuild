@@ -28,7 +28,7 @@ metadata:
 spec:
   selector:
     app:  mongodbtest
-  type:  NodePort
+  type:  ClusterIP
   ports:
   - name:  mongodb
     port:  27017

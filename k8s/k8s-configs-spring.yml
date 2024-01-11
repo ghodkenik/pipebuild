@@ -28,7 +28,7 @@ metadata:
 spec:
   selector:
     app:  springapp
-  type:  NodePort
+  type:  ClusterIP
   ports:
   - name:  spring-test
     port:  9090
