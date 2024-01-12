@@ -49,6 +49,8 @@ pipeline {
                 clusterName: 'kubernetes',
                 namespace: 'default'
                 ]) {
+					sh 'helm dependency build k8s/helm/spring-app/'
+					sh 'helm dependency build k8s/helm/nginx/'
       				sh 'helm install 3tiernginx k8s/helm/nginx/ --set 3tiernginx.image.tag=${BUILD_NUMBER}'
     			}
 			}
