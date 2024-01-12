@@ -18,6 +18,11 @@ pipeline {
 				sh 'docker build . -t pipebuild:${BUILD_NUMBER} --build-arg BUILD_NUMBER=${BUILD_NUMBER}'
 			}
 		}
+		stage('Docker build nginx') {
+			steps {
+				sh 'docker build . -t nginx-custom:${BUILD_NUMBER} -f nginx/Dockerfile --build-arg BUILD_NUMBER=${BUILD_NUMBER}'
+			}
+		}
 		stage('docker login') {
 			steps{
 				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
@@ -25,8 +30,11 @@ pipeline {
 		}
 		stage('docker push') {
 			steps {
-				sh 'docker image tag pipebuild:${BUILD_NUMBER} ghodkenikhil/pipebuild:1.1'
-				sh 'docker push ghodkenikhil/pipebuild:1.1'
+				sh 'docker image tag pipebuild:${BUILD_NUMBER} ghodkenikhil/pipebuild:${BUILD_NUMBER}'
+				sh 'docker push ghodkenikhil/pipebuild:${BUILD_NUMBER}'
+
+				sh 'docker image tag nginx-custom:${BUILD_NUMBER} ghodkenikhil/nginx-custom:${BUILD_NUMBER}'
+				sh 'docker push ghodkenikhil/nginx-custom:${BUILD_NUMBER}'
 			}
 		}
 		stage('helm deployment') {
@@ -38,7 +46,7 @@ pipeline {
                 clusterName: 'kubernetes',
                 namespace: 'default'
                 ]) {
-      				sh 'helm install 3tiernginx k8s/helm/nginx/'
+      				sh 'helm install 3tiernginx k8s/helm/nginx/ --set 3tiernginx.image.tag=${BUILD_NUMBER}'
     			}
 			}
 		}
