@@ -41,7 +41,7 @@ pipeline {
 			steps {
     			withKubeConfig([credentialsId: 'jenkins',
                 caCertificate: "",
-                serverUrl: 'https://127.0.0.1:9999',
+                serverUrl: 'http://127.0.0.1:9999/',
                 contextName: 'kubernetes-admin@kubernetes',
                 clusterName: 'kubernetes',
                 namespace: 'default'
