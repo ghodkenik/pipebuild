@@ -41,6 +41,9 @@ pipeline {
 			steps {
     			withKubeConfig([credentialsId: 'jenkins',
                 caCertificate: "",
+				// below serverurl is from minikube kubectl -- proxy --port=9999
+				// this url can be changed to other k8s cluster by specifying API URL.
+				// exposed API's can be accessed through http://localhost:9999/api/
                 serverUrl: 'http://127.0.0.1:9999/',
                 contextName: 'kubernetes-admin@kubernetes',
                 clusterName: 'kubernetes',
