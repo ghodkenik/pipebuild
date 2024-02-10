@@ -27,8 +27,9 @@ public class CyclicRotation {
         for(int m=0; m<k;m++) {
             arr[m] = temp[m];
         }*/
-        Map<Character,Integer> mpp = new HashMap<>();
-        mpp.getOrDefault(mpp, null);
+        System.out.println("args... " +args[0]);
+        //Map<Character,Integer> mpp = new HashMap<>();
+        //mpp.getOrDefault(mpp, null);
         
 
 

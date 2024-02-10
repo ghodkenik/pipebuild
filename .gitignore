@@ -5,6 +5,7 @@ bin/*
 !/.gitignore
 build/*
 .gradle/*
-.vscode/*
+.vscode/launch.json
 build/*
 k8s/**/*.tgz
+src/main/java/com/test/temp/*.java

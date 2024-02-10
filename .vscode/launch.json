@@ -8,6 +8,13 @@
             "type": "java",
             "name": "CyclicRotation",
             "request": "launch",
+            "mainClass": "com.test.temp.CyclicRotation",
+            "projectName": "pipebuild"
+        },
+        {
+            "type": "java",
+            "name": "CyclicRotation",
+            "request": "launch",
             "mainClass": "com.test.springtest.controller.CyclicRotation",
             "projectName": "pipebuild"
         },
