@@ -44,7 +44,7 @@ pipeline {
 				// below serverurl is from minikube kubectl -- proxy --port=9999
 				// this url can be changed to other k8s cluster by specifying API URL.
 				// exposed API's can be accessed through http://localhost:9999/api/
-                serverUrl: 'https://ec2-13-233-126-206.ap-south-1.compute.amazonaws.com:6443',
+                serverUrl: 'https://ec2-13-201-4-139.ap-south-1.compute.amazonaws.com:6443',
                 contextName: 'kubernetes-admin@kubernetes',
                 clusterName: 'kubernetes',
                 namespace: 'default'
